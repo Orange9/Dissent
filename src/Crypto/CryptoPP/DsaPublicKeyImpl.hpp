@@ -5,7 +5,15 @@
 #include <QSharedPointer>
 #include <QString>
 #include "Crypto/DsaPublicKey.hpp"
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-function"
+#pragma GCC diagnostic ignored "-Wtautological-compare"
 #include <cryptopp/dsa.h>
+#pragma GCC diagnostic pop
+
 
 namespace Dissent {
 namespace Crypto {

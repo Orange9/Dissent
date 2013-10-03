@@ -88,7 +88,7 @@ namespace Anonymity {
 
     protected:
       virtual inline void VerifiableBroadcast(const QByteArray &) {}
-      virtual inline void VerifiableSend(const QByteArray &, const Id &) {}
+      virtual inline void VerifiableSend(const Id &, const QByteArray &) {}
 
       virtual void BroadcastPublicKeys();
       virtual void GenerateCiphertext();

@@ -179,12 +179,12 @@ namespace Anonymity {
       static const int CLIENT_SUBMISSION_WINDOW = 120000;
 
 #if defined(DEMO_SESSION) || defined(DISSENT_TEST)
-      static const float CLIENT_PERCENTAGE = 1.0;
+      static const float CLIENT_PERCENTAGE /* = 1.0 */ ;
 #else
-      static const float CLIENT_PERCENTAGE = .95;
+      static const float CLIENT_PERCENTAGE /* = .95 */ ;
 #endif
 
-      static const float CLIENT_WINDOW_MULTIPLIER = 2.0;
+      static const float CLIENT_WINDOW_MULTIPLIER /* = 2.0 */ ;
 
 #ifdef DEMO_SESSION
       static const int MAX_GET = 1048576;

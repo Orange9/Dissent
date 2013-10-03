@@ -1,6 +1,13 @@
 #include <QDataStream>
 #include <QDebug>
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-function"
+#pragma GCC diagnostic ignored "-Wtautological-compare"
 #include <cryptopp/nbtheory.h>
+#pragma GCC diagnostic pop
 
 #include "Crypto/CryptoRandom.hpp"
 #include "Crypto/CryptoPP/Helper.hpp"

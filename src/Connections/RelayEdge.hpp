@@ -63,6 +63,7 @@ namespace Connections {
        * @param data the data which should be sourced by this edge
        */
       void PushData(const QByteArray &data);
+      using Edge::PushData;
 
       /**
        * Returns the local edge id

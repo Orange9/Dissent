@@ -1,5 +1,13 @@
 #include <QDebug>
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-function"
+#pragma GCC diagnostic ignored "-Wtautological-compare"
 #include <cryptopp/modes.h>
+#pragma GCC diagnostic pop
+
 #include "Crypto/RsaPrivateKey.hpp"
 #include "RsaPublicKeyImpl.hpp"
 #include "Helper.hpp"

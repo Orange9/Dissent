@@ -35,6 +35,14 @@ namespace Dissent {
   using Utils::Serialization;
 
 namespace Anonymity {
+
+#if defined(DEMO_SESSION) || defined(DISSENT_TEST)
+      const float CSBulkRound::CLIENT_PERCENTAGE = 1.0;
+#else
+      const float CSBulkRound::CLIENT_PERCENTAGE = .95;
+#endif
+      const float CSBulkRound::CLIENT_WINDOW_MULTIPLIER = 2.0;
+
   CSBulkRound::CSBulkRound(const Group &group,
       const PrivateIdentity &ident,
       const Id &round_id,

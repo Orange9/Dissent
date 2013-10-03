@@ -63,6 +63,7 @@ namespace Identity {
       typedef QVector<PublicIdentity>::const_iterator const_iterator;
 
       enum SubgroupPolicy {
+        InvalidSubgroup = -1,
         CompleteGroup = 0,
         FixedSubgroup = 1,
         ManagedSubgroup = 2,

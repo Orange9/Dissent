@@ -278,7 +278,7 @@ namespace Anonymity {
         return !stopped;
       }
 
-      static const float PERCENT_ACTIVE = -1;
+      static const float PERCENT_ACTIVE /* = -1 */;
 
       static const int DEFAULT_GENERATE_DATA_SIZE = 256;
 

@@ -2,7 +2,15 @@
 
 #include <QDebug>
 #include <QScopedPointer>
-#include <cryptopp/osrng.h> 
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-function"
+#pragma GCC diagnostic ignored "-Wtautological-compare"
+#include <cryptopp/osrng.h>
+#pragma GCC diagnostic pop
+
 #include "Crypto/CryptoRandom.hpp"
 #include "Helper.hpp"
 

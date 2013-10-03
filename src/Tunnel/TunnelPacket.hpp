@@ -160,7 +160,8 @@ namespace Tunnel {
        */
       static inline TunnelPacket BuildFinished(const QByteArray &connection_id)
       {
-        return TunnelPacket(FINISHED, connection_id);
+        QHash<int, QVariant> options;
+        return TunnelPacket(FINISHED, connection_id, options);
       }
 
       /**
@@ -288,7 +289,7 @@ namespace Tunnel {
        * @param optional optional fields
        */
       TunnelPacket(Types type, const QByteArray &connection_id,
-          const QHash<int, QVariant> &options = QHash<int, QVariant>()) :
+          const QHash<int, QVariant> &options /* = QHash<int, QVariant>() */ ) :
         m_type(type),
         m_connection_id(connection_id),
         m_options(options)

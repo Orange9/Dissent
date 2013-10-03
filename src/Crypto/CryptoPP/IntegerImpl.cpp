@@ -1,8 +1,15 @@
 #ifdef CRYPTOPP
 
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-function"
+#pragma GCC diagnostic ignored "-Wtautological-compare"
 #include <cryptopp/integer.h>
 #include <cryptopp/nbtheory.h>
 #include <cryptopp/modarith.h>
+#pragma GCC diagnostic pop
 
 #include "Crypto/Integer.hpp"
 #include "Helper.hpp"

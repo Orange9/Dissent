@@ -72,6 +72,7 @@ namespace Applications {
         break;
       default:
         qFatal("Invalid session type");
+        exit(-1); // qFatal doesn't have noreturn attribute
     }
 
     QSharedPointer<IAuthenticate> authe(AuthFactory::CreateAuthenticate(

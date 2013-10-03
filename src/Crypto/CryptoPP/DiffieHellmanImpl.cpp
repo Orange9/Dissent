@@ -1,7 +1,15 @@
 #ifdef CRYPTOPP
 
 #include "Crypto/DiffieHellman.hpp"
-#include "cryptopp/dh.h"
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-function"
+#pragma GCC diagnostic ignored "-Wtautological-compare"
+#include <cryptopp/dh.h>
+#pragma GCC diagnostic pop
+
 #include "Helper.hpp"
 
 namespace Dissent {

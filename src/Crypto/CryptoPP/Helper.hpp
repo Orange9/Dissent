@@ -2,8 +2,13 @@
 #ifndef DISSENT_CRYPTO_CRYPTOPP_HELPER_H_GUARD
 #define DISSENT_CRYPTO_CRYPTOPP_HELPER_H_GUARD
 #include <QByteArray>
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 #include <cryptopp/integer.h>
-#include <cryptopp/osrng.h> 
+#include <cryptopp/osrng.h>
+#pragma GCC diagnostic pop
+
 #include "Crypto/CryptoRandom.hpp"
 #include "Crypto/Integer.hpp"
 

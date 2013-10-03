@@ -1,5 +1,14 @@
 #include <QDebug>
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-function"
+#pragma GCC diagnostic ignored "-Wtautological-compare"
+#pragma GCC diagnostic ignored "-Wdelete-non-virtual-dtor"
 #include <cryptopp/queue.h>
+#pragma GCC diagnostic pop
+
 #include "Crypto/DsaPrivateKey.hpp"
 #include "DsaPublicKeyImpl.hpp"
 #include "Helper.hpp"

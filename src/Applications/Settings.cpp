@@ -157,7 +157,7 @@ namespace Applications {
       return false;
     }
 
-    if(SubgroupPolicy == -1) {
+    if(SubgroupPolicy == Group::InvalidSubgroup) {
       _reason = "Invalid subgroup policy";
       return false;
     }

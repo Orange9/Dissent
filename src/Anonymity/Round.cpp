@@ -6,6 +6,8 @@
 
 namespace Dissent {
 namespace Anonymity {
+  const float Round::PERCENT_ACTIVE = -1;
+
   Round::Round(const Group &group,
       const PrivateIdentity &ident,
       const Id &round_id,

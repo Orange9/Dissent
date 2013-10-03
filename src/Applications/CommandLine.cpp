@@ -75,7 +75,7 @@ namespace Applications {
       cmd = msg.left(idx);
       msg = msg.right(msg.size() - idx);
     }
-    cmd.toLower();
+    cmd = cmd.toLower();
 
     if(cmd == "exit") {
       QCoreApplication::exit();

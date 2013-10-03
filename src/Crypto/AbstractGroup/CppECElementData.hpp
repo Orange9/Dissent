@@ -1,7 +1,14 @@
 #ifndef DISSENT_CRYPTO_ABSTRACT_GROUP_CPP_EC_ELEMENT_DATA_H_GUARD
 #define DISSENT_CRYPTO_ABSTRACT_GROUP_CPP_EC_ELEMENT_DATA_H_GUARD
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-function"
+#pragma GCC diagnostic ignored "-Wtautological-compare"
 #include <cryptopp/ecp.h>
+#pragma GCC diagnostic pop
+
 #include <QByteArray>
 #include "ElementData.hpp"
 

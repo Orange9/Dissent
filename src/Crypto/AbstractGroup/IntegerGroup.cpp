@@ -161,6 +161,7 @@ namespace AbstractGroup {
 
       default:
         qFatal("Illegal group type");
+        exit(-1); // qFatal doesn't have noreturn attribute
     }
 
     return QSharedPointer<IntegerGroup>(new IntegerGroup(bytes_p, bytes_g));
