@@ -21,6 +21,8 @@ QMAKE_CXXFLAGS += -Werror
 QMAKE_CFLAGS += -Werror
 
 # External Libraries
+INCLUDEPATH += /opt/local/include
+QMAKE_LIBDIR += /opt/local/lib
 
 # CryptoPP
 DEFINES += CRYPTOPP
@@ -204,6 +206,7 @@ HEADERS += src/Dissent.hpp \
            src/Transports/TcpAddress.hpp \
            src/Transports/TcpEdge.hpp \
            src/Transports/TcpEdgeListener.hpp \
+           src/Transports/SslEdgeListener.hpp \
            src/Tunnel/EntryTunnel.hpp \
            src/Tunnel/ExitTunnel.hpp \
            src/Tunnel/SessionEntryTunnel.hpp \
@@ -338,6 +341,7 @@ SOURCES += src/Anonymity/BaseBulkRound.cpp \
            src/Transports/TcpAddress.cpp \
            src/Transports/TcpEdge.cpp \
            src/Transports/TcpEdgeListener.cpp \
+           src/Transports/SslEdgeListener.cpp \
            src/Tunnel/EntryTunnel.cpp \
            src/Tunnel/ExitTunnel.cpp \
            src/Tunnel/SessionEntryTunnel.cpp \
