@@ -116,6 +116,7 @@ HEADERS += src/Dissent.hpp \
            src/Crypto/NeffShuffle.hpp \
            src/Crypto/RsaPrivateKey.hpp \
            src/Crypto/RsaPublicKey.hpp \
+           src/Crypto/OAEPadding.hpp \
            src/Crypto/CryptoRandom.hpp \
            src/Crypto/DiffieHellman.hpp \
            src/Crypto/Hash.hpp \
@@ -285,6 +286,7 @@ SOURCES += src/Anonymity/BaseBulkRound.cpp \
            src/Crypto/AsymmetricKey.cpp \
            src/Crypto/DsaPrivateKey.cpp \
            src/Crypto/DsaPublicKey.cpp \
+           src/Crypto/OAEPadding.cpp \
            src/Crypto/NeffShuffle.cpp \
            src/Crypto/DiffieHellman.cpp \
            src/Crypto/KeyShare.cpp \

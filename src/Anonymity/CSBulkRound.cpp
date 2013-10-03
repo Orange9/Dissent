@@ -9,6 +9,7 @@
 #include "Crypto/DsaPrivateKey.hpp"
 #include "Crypto/DsaPublicKey.hpp"
 #include "Crypto/Hash.hpp"
+#include "Crypto/OAEPadding.hpp"
 #include "Identity/PublicIdentity.hpp"
 #include "Utils/Random.hpp"
 #include "Utils/QRunTimeError.hpp"
@@ -30,6 +31,7 @@
 namespace Dissent {
   using Crypto::CryptoRandom;
   using Crypto::Hash;
+  using Crypto::OAEPadding;
   using Identity::PublicIdentity;
   using Utils::QRunTimeError;
   using Utils::Serialization;
@@ -1628,38 +1630,12 @@ namespace Anonymity {
 
   QByteArray CSBulkRound::Randomize(const QByteArray &msg)
   {
-    CryptoRandom rand;
-    QByteArray seed(CryptoRandom::OptimalSeedSize(), 0);
-    do {
-      rand.GenerateBlock(seed);
-    } while(seed == NullSeed());
-
-    QByteArray random_text(msg.size(), 0);
-    CryptoRandom(seed).GenerateBlock(random_text);
-
-    Xor(random_text, random_text, msg);
-
-    return seed + random_text;
+    return OAEPadding::Pad(msg, OAEPadding::MininumPaddingLength());
   }
 
   QByteArray CSBulkRound::Derandomize(const QByteArray &randomized_text)
   {
-    QByteArray seed = QByteArray::fromRawData(randomized_text.constData(),
-        CryptoRandom::OptimalSeedSize());
-
-    if(seed == NullSeed()) {
-      return QByteArray();
-    }
-
-    QByteArray msg = QByteArray::fromRawData(
-        randomized_text.constData() + seed.size(),
-        randomized_text.size() - seed.size());
-
-    QByteArray random_text(msg.size(), 0);
-    CryptoRandom(seed).GenerateBlock(random_text);
-
-    Xor(random_text, random_text, msg);
-    return random_text;
+    return OAEPadding::UnPad(randomized_text);
   }
 
   QPair<int, QBitArray> CSBulkRound::FindMismatch()
