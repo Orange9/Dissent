@@ -15,48 +15,45 @@
 namespace Dissent {
 namespace Crypto {
 
-int OAEPadding::MininumPaddingLength()
+int OAEPadding::MinimumPaddingLength()
 {
   // more than twice sha-1 digest
-  return CryptoPP::SHA1::DIGESTSIZE / 4 + 1;
+  return CryptoPP::SHA1::DIGESTSIZE * 2 + 1;
 }
 
-QByteArray OAEPadding::Pad(QByteArray data, int paddingLength)
+QByteArray OAEPadding::Pad(const QByteArray &data, int paddingLength)
 {
+  if (paddingLength < MinimumPaddingLength()) {
+    return QByteArray();
+  }
+
   CryptoPP::OAEP<CryptoPP::SHA1> oaep;
 
   // use the same PRNG with CryptoRandomImpl.cpp
   CryptoPP::AutoSeededX917RNG<CryptoPP::AES> rng;
 
-  QByteArray result;
   int len = data.length() + paddingLength;
-  result.resize(len);
-  oaep.Pad(rng, (const byte *)data.constData(), data.length() * 8,
-           (byte *)result.data(), len, CryptoPP::g_nullNameValuePairs);
+  QByteArray result(len, '\0');
+  oaep.Pad(rng, (const byte *)data.constData(), data.length(),
+           (byte *)result.data(), len * 8, CryptoPP::g_nullNameValuePairs);
 
   return result;
 }
 
-QByteArray OAEPadding::UnPad(QByteArray data)
+QByteArray OAEPadding::UnPad(const QByteArray &data)
 {
   CryptoPP::OAEP<CryptoPP::SHA1> oaep;
 
-  QByteArray result;
-  result.resize(data.length());
+  QByteArray result(data.length(), '\0');
   CryptoPP::DecodingResult r =
     oaep.Unpad((const byte *)data.constData(), data.length() * 8,
                (byte *)result.data(), CryptoPP::g_nullNameValuePairs);
   if (!r.isValidCoding) {
-    result.resize(0);
+    return QByteArray();
   } else {
-    int len = r.messageLength / 8;
-    if (r.messageLength & 0x7) {
-      len++;
-    }
-    result.resize(len);
+    result.resize(r.messageLength);
+    return result;
   }
-
-  return result;
 }
 
 }

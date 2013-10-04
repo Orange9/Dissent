@@ -67,6 +67,7 @@
 #include "Crypto/LRSPrivateKey.hpp"
 #include "Crypto/LRSPublicKey.hpp"
 #include "Crypto/LRSSignature.hpp"
+#include "Crypto/OAEPadding.hpp"
 #include "Crypto/OnionEncryptor.hpp"
 #include "Crypto/Serialization.hpp"
 #include "Crypto/ThreadedOnionEncryptor.hpp"

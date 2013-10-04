@@ -11,9 +11,21 @@ namespace Crypto {
 
 class OAEPadding {
 public:
-  static int MininumPaddingLength();
-  static QByteArray Pad(QByteArray data, int paddingLength);
-  static QByteArray UnPad(QByteArray data);
+  /**
+   * gives the minimum padding length
+   */
+  static int MinimumPaddingLength();
+
+  /**
+   * pad a string using given padding length
+   * returns Null string if padding length is too small
+   */
+  static QByteArray Pad(const QByteArray &data, int paddingLength);
+
+  /**
+   * unpad a string, returns Null string if the string is invalid
+   */
+  static QByteArray UnPad(const QByteArray &data);
 };
 
 } /* Crypto */

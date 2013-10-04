@@ -164,7 +164,7 @@ namespace Tests {
     int changed = Random::GetInstance().GetInt(0, count);
     int mchanged0 = Random::GetInstance().GetInt(0, count);
     int mchanged1 = Random::GetInstance().GetInt(0, count);
-    while((mchanged1 == mchanged0)) {
+    while(mchanged1 == mchanged0) {
       mchanged1 = Random::GetInstance().GetInt(0, count);
     }
 

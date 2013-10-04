@@ -1,4 +1,10 @@
 include(dissent.pro)
+
+QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-private-field
+QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-parameter
+QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-variable
+QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-function
+
 TEMPLATE = app
 TARGET = test
 DEPENDPATH += ext/googletest/src \
@@ -73,6 +79,7 @@ SOURCES += ext/googletest/src/gtest-all.cc \
            src/Tests/NeffKeyShuffleTest.cpp \
            src/Tests/NeffShuffleRoundTest.cpp \
            src/Tests/NullRoundTest.cpp \
+	   src/Tests/OAEPaddingTest.cpp \
            src/Tests/OnionTest.cpp \
            src/Tests/OverlayHelper.cpp \
            src/Tests/PeerReviewTest.cpp \

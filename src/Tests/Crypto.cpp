@@ -279,7 +279,7 @@ namespace Tests {
     QByteArray data(1500, 0);
     CryptoRandom().GenerateBlock(data);
 
-    QScopedPointer<AsymmetricKey> pu_key0_0(pr_key0->GetPublicKey());
+    QSharedPointer<AsymmetricKey> pu_key0_0(pr_key0->GetPublicKey());
     EXPECT_EQ(pu_key0->GetByteArray(), pu_key0_0->GetByteArray());
     EXPECT_EQ(pr_key0->GetByteArray(), pr_key0_0->GetByteArray());
 

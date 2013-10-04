@@ -1630,7 +1630,7 @@ namespace Anonymity {
 
   QByteArray CSBulkRound::Randomize(const QByteArray &msg)
   {
-    return OAEPadding::Pad(msg, OAEPadding::MininumPaddingLength());
+    return OAEPadding::Pad(msg, OAEPadding::MinimumPaddingLength());
   }
 
   QByteArray CSBulkRound::Derandomize(const QByteArray &randomized_text)
